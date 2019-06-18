@@ -1,7 +1,7 @@
 import * as React from 'react';
-import * as request from 'superagent';
 import DogsList from './DogsList';
 import { connect } from 'react-redux';
+import { setDogBreeds, getDogBreeds} from '../actions/dogBreed'
 
 class DogsListContainer extends React.Component {
   componentDidMount() {
@@ -9,9 +9,15 @@ class DogsListContainer extends React.Component {
   }
 
   render() {
-    if (!this.state.dogs) return 'Loading...';
-    return <DogsList dogs={this.props.dogs} />;
+    if (!this.props.dogBreed) return 'Loading...';
+    return <DogsList dogBreed={this.props.dogBreed} />;
   }
 }
 
-export default connect(DogsListContainer);
+const mapStateToProps = (state) => {
+  return {
+    dogBreed: state.dogBreed.dogBreed
+  }
+}
+
+export default connect(mapStateToProps, { setDogBreeds, getDogBreeds })(DogsListContainer);

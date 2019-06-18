@@ -1,19 +1,20 @@
 import superagent from 'superagent'
 
-export function setDogBreeds(dogBreeds) {
+export function setDogBreeds(dogBreed) {
   return {
     type: 'SET_DOG_BREEDS',
-    payload: dogBreeds
+    payload: dogBreed
   }
 }
+
 
 export function getDogBreeds() {
   return function(dispatch) {
-    superagent('https://dog.ceo/dog-api/documentation/')
+    superagent('https://dog.ceo/api/breeds/list/all')
       .then(response => 
-        dispatch(setDogBreeds(response.body)))
+        dispatch(setDogBreeds(response.body.message)))
   }
 }
 
-export const SET_DOG_BREEDS = 'SET_DOG_BREEDS'
 
+export const SET_DOG_BREEDS = 'SET_DOG_BREEDS'
