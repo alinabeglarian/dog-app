@@ -1,6 +1,11 @@
 import { combineReducers } from 'redux'
 import dogBreed from './dogBreed'
+import dogImages from './dogImages'
+import dogGameOne from './dogGameOne'
+
 
 export default combineReducers({
-  dogBreed
+  dogBreed,
+  dogImages,
+  dogGameOne
 })
