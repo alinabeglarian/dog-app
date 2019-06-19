@@ -1,4 +1,5 @@
-import * as React from 'react';
+import * as React from 'react'
+import { Link } from 'react-router-dom'
 
 export default function DogsList(props) {
   return (
@@ -7,7 +8,9 @@ export default function DogsList(props) {
       <p>There are {props.dogBreed.length} breed dogs available.</p>
       <ul>
         {props.dogBreed.map((dog) => 
-          <li key={dog}>{dog}</li>
+          <li key={dog}>
+          <Link to={ `/breed/${dog}` }>{dog}</Link>
+          </li>
         )}
       </ul>
     </div>
