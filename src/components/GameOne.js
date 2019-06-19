@@ -8,9 +8,9 @@ export default function GameOne(props) {
       <p>Choose the right dog!</p>
     
         <form>
-          <input type='radio' /> Dog 1 <br />
-          <input type='radio' /> Dog 2 <br />
-          <input type='radio' /> Dog 3 <br />
+          <input type='radio' name='dog'/> {props.correct} <br />
+          <input type='radio' name='dog'/> {props.second} <br />
+          <input type='radio' name='dog'/> {props.third} <br />
         </form>
 
     </div>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import DogsList from './DogsList';
 import { connect } from 'react-redux';
-import { setDogBreeds, getDogBreeds} from '../actions/dogBreed'
+import { getDogBreeds} from '../actions/dogBreed'
 
 class DogsListContainer extends React.Component {
   componentDidMount() {
@@ -16,8 +16,8 @@ class DogsListContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    dogBreed: state.dogBreed.dogBreed
+    dogBreed: state.dogBreed
   }
 }
 
-export default connect(mapStateToProps, { setDogBreeds, getDogBreeds })(DogsListContainer);
+export default connect(mapStateToProps, { getDogBreeds })(DogsListContainer);

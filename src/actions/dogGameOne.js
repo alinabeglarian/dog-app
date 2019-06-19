@@ -1,17 +1,20 @@
 import superagent from 'superagent'
 
-export function setDogGameOne(dog) {
+export function setDogGameOne(dog, breed) {
   return {
     type: 'SET_DOG_GAME_ONE',
-    payload: dog
+    payload: {
+      dog, 
+      breed
+    }
   }
 }
 
-export function getDogGameOne() {
+export function getDogGameOne(breed) {
   return function(dispatch) {
-    superagent('https://dog.ceo/api/breed/hound/images/random')
+    superagent(`https://dog.ceo/api/breed/${breed}/images/random`)
       .then(response => 
-        dispatch(setDogGameOne(response.body.message)))
+        dispatch(setDogGameOne(response.body.message, breed)))
   }
 }
 
