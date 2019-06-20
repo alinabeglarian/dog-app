@@ -5,10 +5,9 @@ import { getDogGameOne } from '../actions/dogGameOne'
 import { getDogBreedsAndPickThree } from '../actions/dogBreed'
 
 
+
 class GameOneContainer extends React.Component {
   componentDidMount() {
-    const breed = 'akita'
-    this.props.getDogGameOne(breed)
     this.props.getDogBreedsAndPickThree()
   }
   
@@ -16,7 +15,7 @@ class GameOneContainer extends React.Component {
     if (!this.props.dog) return 'Loading..'
     return <GameOne dog={this.props.dog} 
                     breed={this.props.breed} 
-                    correct={this.props.correct} 
+                    correct={this.props.correct}
                     second={this.props.second} 
                     third={this.props.third} />
   }
@@ -31,5 +30,6 @@ const mapStateToProps = (state) =>  {
     third: state.dogGameOne.third
   }
 }
+
 
 export default connect(mapStateToProps, { getDogGameOne, getDogBreedsAndPickThree })(GameOneContainer)

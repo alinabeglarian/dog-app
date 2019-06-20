@@ -17,6 +17,8 @@ class App extends React.Component {
           <main>
             <Link to='/list'>Dog List</Link>
             <br />
+            <Link to='/gameone/'>Game One</Link>
+            <br />
             <Link to='/gametwo'>Game Two</Link>
 
             <Route exact path='/list' component={DogsListContainer} />

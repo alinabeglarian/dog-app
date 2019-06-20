@@ -1,4 +1,6 @@
 import superagent from 'superagent'
+import { getDogGameOne } from './dogGameOne'
+
 
 export function setDogBreeds(dogBreed) {
   return {
@@ -21,7 +23,6 @@ export function setAnswers(correct, second, third) {
 function getBreedList (dispatch) {
   return superagent('https://dog.ceo/api/breeds/list/all')
     .then(response => {
-      console.log('getBreedList test')
       dispatch(setDogBreeds(response.body.message))
 
       return response.body.message
@@ -40,13 +41,12 @@ export function getDogBreedsAndPickThree () {
       .then(message => {
         const list = Object.keys(message)
 
-        const correct = list[0]
+        const correct = list[Math.floor(Math.random()*list.length)]
         const second = list[Math.floor(Math.random()*list.length)]
         const third = list[Math.floor(Math.random()*list.length)]
 
-        console.log('answers test:', correct, second, third)
-
         dispatch(setAnswers(correct, second, third))
+        dispatch(getDogGameOne(correct));
       })
   }
 }
