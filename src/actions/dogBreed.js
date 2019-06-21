@@ -41,13 +41,13 @@ export function getDogBreedsAndPickThree() {
     getBreedList(dispatch)
       .then(message => {
         const list = Object.keys(message)
-        
+
         const correct = list[Math.floor(Math.random()*list.length)]
         const second = list[Math.floor(Math.random()*list.length)]
         const third = list[Math.floor(Math.random()*list.length)]
-
+        
         dispatch(setAnswers(correct, second, third))
-        dispatch(getDogGameOne(correct));
+        dispatch(getDogGameOne(correct))
       })
   }
 }

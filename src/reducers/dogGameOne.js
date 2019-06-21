@@ -1,8 +1,7 @@
-import { SET_DOG_GAME_ONE, SUBMIT_ANSWER } from '../actions/dogGameOne'
+import { SET_DOG_GAME_ONE, INCREASE_SCORE, SHOW_ANSWER, SET_SCORE } from '../actions/dogGameOne'
 import { SET_ANSWERS } from '../actions/dogBreed'
 
-export default (state = initialState, action = {}) => {
-  console.log('state:', state, 'action:', action)
+export default (state = {}, action = {}) => {
   switch(action.type) {
     case SET_DOG_GAME_ONE:
       return {
@@ -12,18 +11,27 @@ export default (state = initialState, action = {}) => {
               }
       case SET_ANSWERS:
         return {
+                ...state,
                 correct: action.payload.correct,
                 second: action.payload.second,
                 third: action.payload.third
         }
-      case SUBMIT_ANSWER:
+      case SET_SCORE:
         return {
                 ...state,
-                isCorrect: action.payload.isCorrect
+                score: action.payload
+        }
+      case INCREASE_SCORE:
+        return {
+                ...state,
+                score: action.payload
+                     }
+      case SHOW_ANSWER:
+        return {
+                ...state,
+                answer: action.payload
         }
       default:
         return state
   }
 }
-
-const initialState = []

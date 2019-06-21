@@ -1,5 +1,10 @@
 import superagent from 'superagent'
 
+export const SET_DOG_GAME_ONE = 'SET_DOG_GAME_ONE'
+export const INCREASE_SCORE='INCREASE_SCORE'
+export const SHOW_ANSWER='SHOW_ANSWER'
+export const SET_SCORE='SET_SCORE'
+
 export function setDogGameOne(dog, breed) {
   return {
     type: 'SET_DOG_GAME_ONE',
@@ -10,7 +15,6 @@ export function setDogGameOne(dog, breed) {
   }
 }
 
-
 //gets dog images by breed from api and dispatches the action that sets te dog and the breed
 export function getDogGameOne(breed) {
   return function(dispatch) {
@@ -20,14 +24,17 @@ export function getDogGameOne(breed) {
   }
 }
 
-export function submitAnswer(isCorrect){
+export function setScore(payload) {
   return {
-    type: 'SUBMIT_ANSWER',
-    payload: {
-      isCorrect
-    }
-  }
+    type: SET_SCORE,
+    payload
+  } 
 }
 
-export const SET_DOG_GAME_ONE = 'SET_DOG_GAME_ONE'
-export const SUBMIT_ANSWER = 'SUBMIT_ANSWER'
+export function showAnswer(breed){
+  
+  return {
+    type: 'SHOW_ANSWER',
+    payload: breed
+  }
+}

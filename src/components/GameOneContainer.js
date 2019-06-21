@@ -1,25 +1,26 @@
 import * as React from 'react';
 import GameOne from './GameOne';
 import { connect } from 'react-redux';
-import { getDogGameOne, submitAnswer } from '../actions/dogGameOne'
+import { getDogGameOne, showAnswer, setScore } from '../actions/dogGameOne'
 import { getDogBreedsAndPickThree } from '../actions/dogBreed'
 
 
 class GameOneContainer extends React.Component {
   componentDidMount() {
     this.props.getDogBreedsAndPickThree()
+    this.props.setScore(0)
   }
 
-  // CALLBACK === ARROW! Can't touch this ... MC hammer style
-  handleSubmit1 = (event) => {
+  handleRightAnswer = (event) => {
+    this.props.setScore(this.props.score + 1)
+    setTimeout(this.props.getDogBreedsAndPickThree, 2000)
     event.preventDefault()
-    this.props.submitAnswer(true) // here we create action object AND dispatch it
   }
 
-  handleSubmit2 = (event) => {
-    console.log('wrong')
+  handleWrongAnswer = (event) => {
+    this.props.showAnswer(this.props.correct)
+    setTimeout(this.props.getDogBreedsAndPickThree, 2000)
     event.preventDefault()
-    this.props.submitAnswer(false)
   }
   
   render() {
@@ -28,19 +29,24 @@ class GameOneContainer extends React.Component {
                     correct={this.props.correct}
                     second={this.props.second} 
                     third={this.props.third} 
-                    handleSubmit1={this.handleSubmit1}
-                    handleSubmit2={this.handleSubmit2}/>
+                    handleRightAnswer={this.handleRightAnswer}
+                    handleWrongAnswer={this.handleWrongAnswer}
+                    score={this.props.score}
+                    correctAnswer={this.props.answer}/>
   }
 }
 
 const mapStateToProps = (state) =>  {
+  console.log('changed state:', state.dogGameOne.score)
   return {
     dog: state.dogGameOne.dog,
     correct: state.dogGameOne.correct,
     second: state.dogGameOne.second,
-    third: state.dogGameOne.third
+    third: state.dogGameOne.third,
+    score: state.dogGameOne.score,
+    answer: state.dogGameOne.answer
   }
 }
 
 
-export default connect(mapStateToProps, { getDogGameOne, getDogBreedsAndPickThree, submitAnswer })(GameOneContainer)
+export default connect(mapStateToProps, { showAnswer, getDogGameOne, getDogBreedsAndPickThree, setScore })(GameOneContainer)
