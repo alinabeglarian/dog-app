@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: 1300px;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -22,11 +24,22 @@
 .App-link {
   color: #61dafb;
 }
-.ImgRandDog {
-  max-width: 300px;
-  max-height: 300px;
-  margin: 10px;
+
+.ImgRandDog-cover img {
+  object-fit: cover;
+  margin: 5px 10px;
+  width: 300px;
+  height: 300px;
 }
+
+img:hover {
+  cursor: pointer;
+  opacity: .8;
+  transform: scale(1.03);
+  transition: .7s;
+  border-radius: 2px;
+}
+
 
 .DogBreedTitle {
   font-weight: bolder;
