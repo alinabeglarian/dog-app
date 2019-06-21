@@ -11,7 +11,7 @@ export default function DogImages (props) {
         <div className='ImgRandDog ImgRandDog-cover'>{ props.images && props.images.map(url => <img src={ url } key={url} alt="Dog" />) }
       { !props.images && 'Loading...' }
       </div> 
-        <p><Link to="/list">Go back to the index</Link></p>
+        <h1>Go back to the <Link to="/list"  className='Link'>Dogs Breed List</Link></h1>
         <div>
       
     </div>
