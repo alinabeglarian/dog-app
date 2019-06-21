@@ -15,12 +15,17 @@ export default function GameThree (props) {
     return (
         
       <div className="dog-game-three">
-        <h1>Game Three</h1>
-        <p><table>
-          <tr><th>Question</th><th>The correct answer is</th></tr>
-        <tr><th><img src={ props.question } key={props.question} alt="Dog" height="175px" width="250px"/></th>
-        <th>The correct answer is {props.correctAnswer}</th></tr>
-        <tr><th>{buttonOptions.map(choice=><button key={Math.random()*1000} onClick={props[choice[1]]}>{choice[0]}</button>)}</th><th></th>Your score is: {props.score}</tr></table></p>        
+        <h1 className='Game'>Game Three</h1>
+        <p>Question</p>
+        <div className='ImgRandDog ImgRandDog-cover'>
+        <img src={ props.question } key={props.question} alt="Dog" />
+        </div>  
+        <p>The correct answer is {props.correctAnswer}</p>
+        <div>
+        {buttonOptions.map(choice=><button key={Math.random()*1000} onClick={props[choice[1]]}>{choice[0]}</button>)}
+        </div>
+        <p>
+        Your score is: {props.score}</p>        
         <div>
       
     </div>
