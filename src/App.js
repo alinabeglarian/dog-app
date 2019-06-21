@@ -17,6 +17,7 @@ class App extends React.Component {
       <Provider store={store}>
         <div className='App' >
           <main>
+<<<<<<< HEAD
             <div className='MainNav'>
               <ul>
                 <li><Link to='/'>Home</Link></li>
@@ -28,6 +29,13 @@ class App extends React.Component {
             </div>
             <div className='Container'>
               
+=======
+            <Link to='/list'>Dog List</Link>
+            <br />
+            <Link to='/gameone/'>Game One</Link>
+            <br />
+            <Link to='/gametwo'>Game Two</Link>
+>>>>>>> feat/gameone
 
             <Route exact path='/list' component={DogsListContainer} />
             <Route exact path='/breed/:dogBreed' component={DogImagesContainer} />
