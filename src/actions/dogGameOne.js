@@ -10,6 +10,8 @@ export function setDogGameOne(dog, breed) {
   }
 }
 
+
+//gets dog images by breed from api and dispatches the action that sets te dog and the breed
 export function getDogGameOne(breed) {
   return function(dispatch) {
     superagent(`https://dog.ceo/api/breed/${breed}/images/random`)
@@ -18,4 +20,14 @@ export function getDogGameOne(breed) {
   }
 }
 
+export function submitAnswer(isCorrect){
+  return {
+    type: 'SUBMIT_ANSWER',
+    payload: {
+      isCorrect
+    }
+  }
+}
+
 export const SET_DOG_GAME_ONE = 'SET_DOG_GAME_ONE'
+export const SUBMIT_ANSWER = 'SUBMIT_ANSWER'

@@ -20,6 +20,7 @@ export function setAnswers(correct, second, third) {
   }
 }
 
+
 function getBreedList (dispatch) {
   return superagent('https://dog.ceo/api/breeds/list/all')
     .then(response => {
@@ -35,12 +36,12 @@ export function getDogBreeds() {
   }
 }
 
-export function getDogBreedsAndPickThree () {
+export function getDogBreedsAndPickThree() {
   return function(dispatch) {
     getBreedList(dispatch)
       .then(message => {
         const list = Object.keys(message)
-
+        
         const correct = list[Math.floor(Math.random()*list.length)]
         const second = list[Math.floor(Math.random()*list.length)]
         const third = list[Math.floor(Math.random()*list.length)]
