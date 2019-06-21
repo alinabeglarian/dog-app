@@ -15,8 +15,12 @@ export default function GameOne(props) {
           <button className='third' name='dog' onClick={props.handleWrongAnswer}> {props.third} </button> <br />
 
         </form>
-        <p>score: {props.score}</p>
-        <p>correct answer: {props.correctAnswer}</p>
+        <p>Score: {props.score}</p>
+        <p>Correct answer: {props.correctAnswer}</p>
+
+
+        
+    
     </div>
   )
 }

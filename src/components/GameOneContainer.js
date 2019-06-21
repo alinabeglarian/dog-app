@@ -13,7 +13,7 @@ class GameOneContainer extends React.Component {
 
   handleRightAnswer = (event) => {
     this.props.setScore(this.props.score + 1)
-    setTimeout(this.props.getDogBreedsAndPickThree, 2000)
+    setTimeout(this.props.getDogBreedsAndPickThree, 1000)
     event.preventDefault()
   }
 
