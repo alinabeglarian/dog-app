@@ -23,7 +23,7 @@ class App extends React.Component {
                 <li><Link to='/list'>Dog List</Link></li>  
                 <li><Link to='/gameone'>Game One</Link></li>
                 <li><Link to='/gametwo'>Game Two</Link></li>
-                <li><Link to='/gameThree'>Game Three</Link></li>
+                <li><Link to='/games/3'>Game Three</Link></li>
               </ul>
             </div>
             <div className='Container'>
@@ -33,7 +33,7 @@ class App extends React.Component {
             <Route exact path='/breed/:dogBreed' component={DogImagesContainer} />
             <Route exact path='/gameone/' component={GameOneContainer} />
             <Route exact path='/gametwo/' component={GameTwoContainer} />
-            <Route exact path='/gamethree/' component={GameThreeContainer} />
+            <Route exact path='/games/:gameNumber' component={GameThreeContainer} />
             </div>
           </main>
          
