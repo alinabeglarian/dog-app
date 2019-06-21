@@ -55,6 +55,20 @@ export function getDogTwo() {
       payload: 0
     }
   }
+
+  export function setQuestion(){
+    return {
+      type: 'SET_QUESTION',
+      payload: 0
+    }
+  }
+
+  export function nextQuestion(question){
+    return {
+      type: 'NEXT_QUESTION',
+      payload: question+1
+    }
+  }
   
   export function increaseScore(score){
     return {
@@ -65,11 +79,16 @@ export function getDogTwo() {
 
   export function showAnswer(answer){
     const dogUrl=answer+""
-    const urlParts=dogUrl.split("/")
-    const dogName=urlParts[4]
     return {
       type: 'SHOW_ANSWER',
-      payload: dogName
+      payload: dogUrl
+    }
+  }
+
+  export function setGame(gameNumber){
+    return {
+      type: 'SET_GAME',
+      payload: gameNumber
     }
   }
 
@@ -79,3 +98,6 @@ export function getDogTwo() {
   export const SET_SCORE = 'SET_SCORE'
   export const INCREASE_SCORE='INCREASE_SCORE'
   export const SHOW_ANSWER='SHOW_ANSWER'
+  export const SET_QUESTION='SET_QUESTION'
+  export const NEXT_QUESTION='NEXT_QUESTION'
+  export const SET_GAME='SET_GAME'
