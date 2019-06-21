@@ -7,9 +7,11 @@ export default function DogImages (props) {
     return (
       <div className="dog-breed-images">
         <h1>Dogs Breed Images</h1>
-        <p>{ props.images && props.images.map(url => <img src={ url } key={url} alt="Dog" />) }
-      { !props.images && 'Loading...' }</p> 
-        <p><Link to="/list">Go back to the index</Link></p>
+
+        <div className='ImgRandDog ImgRandDog-cover'>{ props.images && props.images.map(url => <img src={ url } key={url} alt="Dog" />) }
+      { !props.images && 'Loading...' }
+      </div> 
+        <h1>Go back to the <Link to="/list"  className='Link'>Dogs Breed List</Link></h1>
         <div>
       
     </div>

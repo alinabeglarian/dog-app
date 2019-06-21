@@ -1,5 +1,13 @@
 .App {
   text-align: center;
+  margin: 0 auto;
+  background: red;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('./images/dogsBackground.jpg');
+  min-height: 890px; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0;
 }
 
 .App-logo {
@@ -23,6 +31,54 @@
   color: #61dafb;
 }
 
+.Link {
+  text-decoration: none;
+  color: #f0f0f0;
+}
+
+.Link:hover {
+  color: #333;
+  background: #f0f0f0;
+}
+.Container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.ImgRandDog-cover img {
+  object-fit: cover;
+  margin: 5px 10px;
+  width: 300px;
+  height: 300px;
+}
+
+img:hover {
+  cursor: pointer;
+  opacity: .8;
+  transform: scale(1.03);
+  transition: .7s;
+  border-radius: 2px;
+}
+
+
+.DogBreedTitle {
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.span {
+  text-transform: uppercase;
+}
+
+.TitlePage, .Game, p, h1 {
+  color: antiquewhite;
+  margin: 0 auto;
+  padding-top: 50px;
+  font-size: 30px;
+}
+
+.Game {
+  text-transform: uppercase;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -30,4 +86,81 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.DogsListHeader {
+  background-color: transparent;
+  background-color: rgba(220, 229,244, 0.6); 
+}
+.DogsList {
+  background-color: transparent;
+  background-color: rgba(216, 196, 194, 0.6);
+}
+
+.DogsList li {
+  font-size: 20px;
+  text-transform: uppercase;
+  width:25%; 
+  float:left;
+}
+.DogsList li a {
+  color: rgb(53, 53, 53);
+}
+
+.DogsList li a:hover {
+  color: #f0f0f0;
+}
+
+.Form {
+  display: inline-block;
+  position: relative;
+  padding: 25px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  color: #f0f0f0;
+}
+
+.Form input {
+  padding: 10px;
+  margin-left: 30px;
+}
+
+.Footer {
+  width: 100%;
+  margin: 0 auto;
+  line-height: 40px;
+  text-align: center;
+  bottom: 0;
+  background-color: #282c34;
+  color: aliceblue;
 }
