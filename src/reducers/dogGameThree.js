@@ -1,0 +1,38 @@
+import { SET_DOG_ONE,SET_DOG_TWO,SET_DOG_THREE,SET_SCORE,INCREASE_SCORE,SHOW_ANSWER } from '../actions/dogGameThree'
+
+export default (state = [], action = {}) => {
+  switch(action.type) {
+    case SET_DOG_ONE:
+      return {
+        ...state,
+       dogOne:  action.payload
+       }
+    case SET_DOG_TWO:
+        return {
+          ...state,
+         dogTwo: action.payload
+         }
+    case SET_DOG_THREE:
+      return {
+        ...state,
+       dogThree: action.payload
+       }
+    case SET_SCORE:
+      return {
+        ...state,
+        score: action.payload
+           }
+    case INCREASE_SCORE:
+      return {
+        ...state,
+        score: action.payload
+                   }
+    case SHOW_ANSWER:
+      return {
+        ...state,
+        answer: action.payload
+                                 }
+    default:
+        return state
+  }
+}
