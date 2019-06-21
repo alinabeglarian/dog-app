@@ -16,14 +16,8 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <div className='App' >
-<<<<<<< HEAD
           <main>
-<<<<<<< HEAD
-=======
-          <main> 
->>>>>>> aa82cbf40263fd01453551fecace2bae2bcdb91c
             <div className='MainNav'>
-              
               <ul>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/list'>Dog List</Link></li>  
@@ -32,22 +26,8 @@ class App extends React.Component {
                 <li><Link to='/gameThree'>Game Three</Link></li>
               </ul>
             </div>
-            <h2 className='TitlePage'>Welcome to the <span className='span'>most wanted</span> Dog App!</h2>
-            <br/>
-            <br/>
-           
             <div className='Container'>
               
-<<<<<<< HEAD
-=======
-            <Link to='/list'>Dog List</Link>
-            <br />
-            <Link to='/gameone/'>Game One</Link>
-            <br />
-            <Link to='/gametwo'>Game Two</Link>
->>>>>>> feat/gameone
-=======
->>>>>>> aa82cbf40263fd01453551fecace2bae2bcdb91c
 
             <Route exact path='/list' component={DogsListContainer} />
             <Route exact path='/breed/:dogBreed' component={DogImagesContainer} />
