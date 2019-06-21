@@ -1,5 +1,6 @@
 import * as React from 'react'
 
+
 export default function GameThree (props) {
     const imageUrlString=props.question+""
     const image=imageUrlString.split("/")
@@ -25,7 +26,7 @@ export default function GameThree (props) {
     if(props.game===1||(props.game===3 && !props.questionNumber)||(props.game===3 && props.questionNumber%2===0)){
       return (
         <div className="dog-game">
-          <h1>{"Game "+props.game}</h1>
+          <h1 className='Game'>{"Game "+props.game}</h1>
           <p>Question number {props.questionNumber}</p>
           <p>Which breed is this?</p>
           <p><img src={ props.question } key={props.question} alt="Dog" height="175px" width="250px"/></p>
@@ -41,16 +42,19 @@ export default function GameThree (props) {
     if(props.game===2||(props.game===3 && props.questionNumber%2===1)){
       return (
         <div className="dog-game">
-          <h1>{"Game "+props.game}</h1>
+          <h1 className='Game'>{"Game "+props.game}</h1>
           <p>Question number {props.questionNumber}</p>
           <p>Select the correct image of the breed <b>{correctAnswer}</b> </p>
           <p>Choices:</p>
+                <div className='ImgRandDog ImgRandDog-cover'>
           <p>{imageButtons.map(choice=><button key={Math.random()*1000} onClick={props[choice[1]]}>
           {<img src={choice[0]} key={choice[0]} alt="Dog" height="175px" width="250px"/>}
           </button>)}</p>
+        </div>
           <p>The correct answer was <b>{previousTextAnswer}</b></p>
           <p>Your score is: {props.score}</p>
         </div>
       )
     }
+     
   }
