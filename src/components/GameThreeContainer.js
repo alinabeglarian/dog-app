@@ -34,18 +34,21 @@ class GameThreeContainer extends React.Component {
   }
 
   render() {
-      const dogImageUrls=[this.props.dogOne+"",this.props.dogTwo+"",this.props.dogThree+""]
-      const question=dogImageUrls[0]
-      const wrongAnswer1=dogImageUrls[1]
-      const wrongAnswer2=dogImageUrls[2]
-      return <GameThree question={question} wrongAnswer1={wrongAnswer1} 
-      wrongAnswer2={wrongAnswer2} score={this.props.score} 
+    if(!this.props.game){
+      return "loading"
+    }
+      else{
+        const gameNumber=this.props.game+"0"
+        const realNumber=gameNumber/10
+      return <GameThree question={this.props.dogOne+""} wrongAnswer1={this.props.dogTwo+""} 
+      wrongAnswer2={this.props.dogThree+""} score={this.props.score} 
       false={this.handleWrongAnswer} true={this.handleCorrectAnswer}
-       correctAnswer={this.props.answer} game={this.props.game} questionNumber={this.props.question}/>
+       correctAnswer={this.props.answer} game={realNumber} questionNumber={this.props.question}/>}
     }
 }
 
 const mapStateToProps = (state) => {
+  console.log("i should execute game",state.dogGameThree.game)
   return {
     dogOne: state.dogGameThree.dogOne,
     dogTwo: state.dogGameThree.dogTwo,
