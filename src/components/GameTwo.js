@@ -4,11 +4,14 @@ export default function DogGameTwo(props) {
   return (
     <div>
       <h1 className='Game'>Game Two</h1>
-      <h2>Choose the right breed!</h2>
+      <h1>Choose the right breed!</h1>
+      
       <p>
         In which image do you see the{' '}
         <span className='DogBreedTitle'>{props.dog}</span> dog breed?
       </p>
+      <br/>
+      <br/>
       <div className='ImgRandDog ImgRandDog-cover'>
         <img
           
