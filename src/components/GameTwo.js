@@ -9,9 +9,9 @@ export default function DogGameTwo(props) {
         In which image do you see the{' '}
         <span className='DogBreedTitle'>{props.dog}</span> dog breed?
       </p>
-      <p>
+      <div className='ImgRandDog ImgRandDog-cover'>
         <img
-          className='ImgRandDog'
+          
           key={props.dogImg[0]}
           src={props.dogImg[0]}
           alt='Doggie'
@@ -28,7 +28,7 @@ export default function DogGameTwo(props) {
           src={props.dogImg[2]}
           alt='Doggie'
         />
-      </p>
+      </div>
     </div>
   );
 }
