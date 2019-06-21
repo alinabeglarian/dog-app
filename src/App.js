@@ -16,8 +16,7 @@ class App extends React.Component {
     return (
       <Provider store={store}>
         <div className='App' >
-          <main>
-            
+          <main> 
             <div className='MainNav'>
               
               <ul>
