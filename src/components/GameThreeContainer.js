@@ -6,7 +6,6 @@ import GameThree from './GameThree';
 class GameThreeContainer extends React.Component {
   componentDidMount() {
     const gameNumber = this.props.match.params.gameNumber
-    console.log("am i calling this?",gameNumber)
     this.props.setGame(gameNumber)
     this.props.setQuestion()
     this.props.getDogOne();
@@ -48,7 +47,6 @@ class GameThreeContainer extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log("i should execute game",state.dogGameThree.game)
   return {
     dogOne: state.dogGameThree.dogOne,
     dogTwo: state.dogGameThree.dogTwo,
