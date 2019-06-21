@@ -17,7 +17,9 @@ class App extends React.Component {
       <Provider store={store}>
         <div className='App' >
           <main>
+            
             <div className='MainNav'>
+              
               <ul>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/list'>Dog List</Link></li>  
@@ -26,6 +28,10 @@ class App extends React.Component {
                 <li><Link to='/gameThree'>Game Three</Link></li>
               </ul>
             </div>
+            <h2 className='TitlePage'>Welcome to the <span className='span'>most wanted</span> Dog App!</h2>
+            <br/>
+            <br/>
+           
             <div className='Container'>
               
 
