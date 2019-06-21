@@ -1,7 +1,13 @@
 .App {
   text-align: center;
-  width: 1300px;
+  
   margin: 0 auto;
+  background: red;
+  background-image: url('./images/dogsBackground.jpg');
+  min-height: 1000px; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .App-logo {
@@ -25,6 +31,10 @@
   color: #61dafb;
 }
 
+.Container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
 .ImgRandDog-cover img {
   object-fit: cover;
   margin: 5px 10px;
@@ -52,4 +62,59 @@ img:hover {
   to {
     transform: rotate(360deg);
   }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+.DogsListHeader {
+  background-color: transparent;
+  background-color: rgba(220, 229,244, 0.6); 
+}
+.DogsList {
+  background-color: transparent;
+  background-color: rgba(197, 196, 204, 0.568); 
+}
+
+.DogsList li {
+  color: #282c34;
+  font-size: 20px;
+  text-transform: uppercase;
+  width:25%; 
+  float:left;
+}
+
+.Footer {
+  width: 100%;
+  line-height: 40px;
+  text-align: center;
+  bottom: 0;
+  background-color: #282c34;
+  color: aliceblue;
 }

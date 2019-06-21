@@ -15,22 +15,30 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <div className='App'>
+        <div className='App' >
           <main>
-            <Link to='/list'>Dog List</Link>
-            
-            <br />
-            <Link to='/gameone'>Game One</Link>
-            <Link to='/gametwo'>Game Two</Link>
-            <Link to='/gameThree'>Game Three</Link>
+            <div className='MainNav'>
+              <ul>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/list'>Dog List</Link></li>  
+                <li><Link to='/gameone'>Game One</Link></li>
+                <li><Link to='/gametwo'>Game Two</Link></li>
+                <li><Link to='/gameThree'>Game Three</Link></li>
+              </ul>
+            </div>
+            <div className='Container'>
+              
 
             <Route exact path='/list' component={DogsListContainer} />
             <Route exact path='/breed/:dogBreed' component={DogImagesContainer} />
             <Route exact path='/gameone/' component={GameOneContainer} />
             <Route exact path='/gametwo/' component={GameTwoContainer} />
             <Route exact path='/gamethree/' component={GameThreeContainer} />
+            </div>
           </main>
+         
         </div>
+        <footer className='Footer'>This is our Dog App! &copy; Alina, Marlon 	&#38; Ionut</footer>
       </Provider>
     );
   }
