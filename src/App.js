@@ -26,7 +26,12 @@ class App extends React.Component {
                 <li><Link to='/games/3'>Game Three</Link></li>
               </ul>
             </div>
+            <h2 className='TitlePage'>Welcome to the <span className='span'>most wanted</span> Dog App!</h2>
+            <br/>
+            <br/>
+           
             <div className='Container'>
+              
               
 
             <Route exact path='/list' component={DogsListContainer} />
